@@ -1,0 +1,63 @@
+GET http://localhost:8080/ HTTP/1.1
+content-type:  application/json
+
+###
+
+GET http://localhost:8080/api/policies HTTP/1.1
+content-type:  application/json
+
+###
+
+POST http://localhost:8080/api/policies HTTP/1.1
+content-type:  application/json
+
+{
+  
+    "name": "new BOP policy",
+    "type": "BOP",
+    "holder_first_name": "George",
+    "holder_last_name": "Jetson",
+    "holder_account_id": "GJ1234",
+    "is_active": true,
+    "has_active_claim": false,
+    "effective_date": "2020-01-01",
+    "termination_date": "2020-12-31"
+}
+
+###
+GET http://localhost:8080/api/policies/5f99c27a98e16b51189c94d5 HTTP/1.1
+content-type:  application/json
+
+### no id found
+GET http://localhost:8080/api/policies/5f988145406fb64444444444 HTTP/1.1
+content-type:  application/json
+
+### update
+PUT http://localhost:8080/api/policies/5f988145406fb64554dfb3e5 HTTP/1.1
+content-type:  application/json
+
+{
+    "name": "Bad Policy",
+    "holder_last_name": "Johnson"
+}
+
+### update with bad id
+PUT http://localhost:8080/api/policies/5f988145406fb64554666666 HTTP/1.1
+content-type:  application/json
+
+{
+    "name": "Platinum Policy",
+    "holder_last_name": "Jones"
+}
+
+### delete
+DELETE http://localhost:8080/api/policies/5f988145406fb64554dfb3e5 HTTP/1.1
+content-type:  application/json
+
+### delete bad id
+DELETE http://localhost:8080/api/policies/5f988145406fb64554dfb3e5 HTTP/1.1
+content-type:  application/json
+
+### delete all
+DELETE http://localhost:8080/api/policies HTTP/1.1
+content-type:  application/json
