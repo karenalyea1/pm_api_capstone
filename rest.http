@@ -15,9 +15,9 @@ content-type:  application/json
   
     "name": "new BOP policy",
     "type": "BOP",
-    "holder_first_name": "George",
-    "holder_last_name": "Jetson",
-    "holder_account_id": "GJ1234",
+    "holder_first_name": "Yogi",
+    "holder_last_name": "Bear",
+    "holder_account_id": "YB1234",
     "is_active": true,
     "has_active_claim": false,
     "effective_date": "2020-01-01",

@@ -6,6 +6,12 @@ const mongoose = require("mongoose");
 
 const app = express();
 
+var corsOptions = {
+    origin: "http://localhost:8081"
+};
+
+app.use(cors(corsOptions));
+
 // parse HTTP requests with content-type = application/jason
 app.use(bodyParser.json());
 
